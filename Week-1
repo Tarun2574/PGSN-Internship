@@ -1,0 +1,162 @@
+# Week 2 Learning Journey: AWS Compute & Networking ☁️
+
+During Week 2 of my cloud internship, I explored the core building blocks of AWS infrastructure. The focus was on understanding how cloud servers, networking, and security work together to host applications reliably and securely.
+
+---
+
+## 🖥️ Amazon EC2 (Elastic Compute Cloud)
+
+Amazon EC2 allows users to launch virtual servers in the cloud within minutes. Instead of purchasing physical hardware, organizations can rent computing resources on demand.
+
+### What I Learned
+
+* What EC2 instances are and why they are used
+* Different instance types and their use cases
+* Amazon Machine Images (AMIs)
+* Key Pairs for secure access
+* Elastic Block Store (EBS) for persistent storage
+
+### Hands-On Practice
+
+* Launched a Linux EC2 instance
+* Connected to the instance using SSH
+* Explored the AWS Management Console
+* Monitored instance status and performance
+
+---
+
+## 🌐 Amazon VPC (Virtual Private Cloud)
+
+A VPC is a private network created within AWS where resources can be deployed securely.
+
+### What I Learned
+
+* Purpose of a VPC
+* CIDR blocks and IP addressing
+* Public and Private Subnets
+* Route Tables
+* Internet Gateway
+
+### Architecture Overview
+
+```text
+Internet
+   │
+Internet Gateway
+   │
+ ┌─────────────┐
+ │ Public      │
+ │ Subnet      │
+ │ Web Server  │
+ └─────────────┘
+   │
+ ┌─────────────┐
+ │ Private     │
+ │ Subnet      │
+ │ Database    │
+ └─────────────┘
+```
+
+### Hands-On Practice
+
+* Created a custom VPC
+* Configured subnets
+* Attached an Internet Gateway
+* Updated Route Tables
+
+---
+
+## 🔒 Security Groups
+
+Security Groups act as virtual firewalls that control inbound and outbound traffic for AWS resources.
+
+### Common Rules
+
+| Port | Service | Purpose                |
+| ---- | ------- | ---------------------- |
+| 22   | SSH     | Remote Access          |
+| 80   | HTTP    | Website Traffic        |
+| 443  | HTTPS   | Secure Website Traffic |
+
+### What I Learned
+
+* Difference between inbound and outbound rules
+* Principle of least privilege
+* Importance of securing cloud resources
+
+### Hands-On Practice
+
+* Created Security Groups
+* Allowed SSH access from my IP address
+* Configured HTTP traffic for web access
+
+---
+
+## ⚖️ Elastic Load Balancer (ELB)
+
+Load Balancers distribute incoming traffic across multiple servers to improve availability and reliability.
+
+### Benefits
+
+* High availability
+* Better fault tolerance
+* Improved performance
+* Traffic distribution across instances
+
+### What I Learned
+
+* Why load balancing is important
+* How AWS routes requests to healthy instances
+* Basic architecture of highly available applications
+
+---
+
+## 🎯 Auto Scaling
+
+Auto Scaling automatically adjusts the number of EC2 instances based on demand.
+
+### Benefits
+
+* Cost optimization
+* Better performance during peak traffic
+* Improved reliability
+
+### Example
+
+```text
+Low Traffic      → 1 Instance
+Medium Traffic   → 2 Instances
+High Traffic     → 4 Instances
+```
+
+### What I Learned
+
+* Scaling policies
+* Dynamic resource allocation
+* Importance of elasticity in cloud computing
+
+---
+
+## 🛠️ Skills Gained This Week
+
+✔️ Launching and managing EC2 instances
+
+✔️ Understanding AWS networking fundamentals
+
+✔️ Creating and configuring VPCs
+
+✔️ Working with Security Groups
+
+✔️ Understanding Load Balancing concepts
+
+✔️ Learning Auto Scaling fundamentals
+
+✔️ Building cloud infrastructure manually
+
+---
+
+## 📌 Key Takeaway
+
+This week helped me understand how cloud infrastructure is built from the ground up. I learned how virtual servers, networking, and security components interact to create scalable and reliable cloud environments. These concepts form the foundation for advanced AWS services and cloud automation in the coming weeks.
+
+**Next Step:** Infrastructure as Code (Terraform & CloudFormation) and AWS Automation.
