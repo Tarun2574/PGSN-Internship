@@ -2,12 +2,13 @@
 
 This repository documents hands-on AWS Cloud Engineering work completed during an ongoing internship. It covers compute, networking, storage, high availability, security, Infrastructure-as-Code, containerization, and CI/CD — built and verified incrementally, week by week.
 
-> **Status:** This internship is in progress. This repository currently documents **Week 2**, **Week 2 Extension**, and **Week 3**. Additional weeks will be added as they are completed.
+> **Status:** This internship is in progress. This repository currently documents **Week 1**, **Week 2**, **Week 2 Extension**, and **Week 3**. Additional weeks will be added as they are completed.
 
 ## Repository Structure
 
-```
-AWS-Internship/
+```text
+PGSN-Internship/
+├── Week-1/
 ├── Week-2/
 │   ├── Task-2.1-Web-Server-EC2/
 │   ├── Task-2.2-Custom-VPC/
@@ -34,25 +35,32 @@ AWS-Internship/
 └── README.md
 ```
 
-Each task/day folder contains its own `README.md` (and `Commands.md` where CLI commands were used), following a consistent format: Overview, Objectives, AWS Services Used, Prerequisites, Implementation, Verification, Challenges & Troubleshooting, Key Learnings, Result, Skills Demonstrated, Commands Used, Screenshot References, and Conclusion.
+Each task/day folder contains its own `README.md` (and `Commands.md` where applicable), documenting objectives, implementation steps, AWS services used, verification, challenges, key learnings, commands, and screenshots.
 
 ## Weekly Summaries
 
-### [Week 2 – AWS Fundamentals: Compute, Networking & Storage](./Week-2/README.md)
-Launched an EC2 web server, built a custom VPC with public/private subnets and NAT/Internet Gateways, and explored both S3 (static hosting) and EBS (attached volume + snapshot) storage.
+### Week 1
 
-### [Week 2 Extension – Advanced AWS Networking, Compute & Storage](./Week-2-Extension/README.md)
-Extended the Week 2 environment to multi-AZ, added an Application Load Balancer and Auto Scaling Group, locked down private instances behind a Bastion Host, layered on S3 versioning/lifecycle rules, and enabled VPC Flow Log monitoring.
+Foundational internship activities and initial cloud learning tasks.
 
-### [Week 3 – Infrastructure as Code, Containerization & CI/CD](./Week-3/README.md)
-Moved from manual console work to Terraform-managed infrastructure (with modules and a remote S3 backend), containerized the application with Docker, automated builds with GitHub Actions, deployed via Terraform, and added CloudWatch monitoring.
+### Week 2 – AWS Fundamentals: Compute, Networking & Storage
+
+Built an EC2 web server, created a custom VPC with public and private subnets, configured Internet and NAT Gateways, and explored Amazon S3 and Amazon EBS.
+
+### Week 2 Extension – Advanced AWS Networking, Compute & Storage
+
+Designed a Multi-AZ architecture, implemented an Application Load Balancer and Auto Scaling Group, configured Bastion Host access, enabled S3 versioning and lifecycle policies, and monitored traffic using VPC Flow Logs.
+
+### Week 3 – Infrastructure as Code, Containerization & CI/CD
+
+Provisioned infrastructure using Terraform, organized reusable modules, containerized applications with Docker, automated workflows using GitHub Actions, and configured monitoring with Amazon CloudWatch.
 
 ## Architecture
 
-A full architecture diagram covering the networking, compute, storage, and monitoring layers built across Week 2 and Week 2 Extension is available in [`Assets/Architecture_Diagram.jpg`](./Assets/Architecture_Diagram.jpg), and is also included directly in [Task 2.4](./Week-2/Task-2.4-Architecture-Diagram/README.md) and [Week 2 Extension Day 7](./Week-2-Extension/Day-7-Architecture-Documentation/README.md).
+The repository includes architecture diagrams illustrating networking, compute, storage, and monitoring components built throughout the internship.
 
-## Notes on Documentation Scope
+## Notes
 
-- Screenshots were curated down to the clearest evidence for each step; duplicate, blank, or low-value screenshots were excluded rather than included for volume.
-- Every command listed in a `Commands.md` file was observed directly in a screenshot — no commands were invented.
-- Where a deliverable (e.g., a dedicated Task 2.4 diagram) had no distinct screenshot of its own, the closest available evidence was reused and explicitly noted as such rather than fabricated.
+* Screenshots have been curated to show the most relevant implementation evidence.
+* Commands included in the documentation correspond to actual execution steps.
+* Documentation reflects completed practical work and will continue to be updated as the internship progresses.
