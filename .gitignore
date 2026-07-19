@@ -1,4 +1,13 @@
-.terraform/
+# Terraform
+**/.terraform/
 *.tfstate
 *.tfstate.*
 *.tfvars
+
+# Secrets
+*.tfvars
+*.tfvars.json
+
+# OS files
+.DS_Store
+Thumbs.db
