@@ -1,0 +1,112 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+
+  name: taskflow-deployment
+
+  namespace: taskflow
+
+
+spec:
+
+  replicas: 2
+
+
+  selector:
+
+    matchLabels:
+
+      app: taskflow
+
+
+
+  template:
+
+
+    metadata:
+
+      labels:
+
+        app: taskflow
+
+
+
+    spec:
+
+
+      containers:
+
+
+        - name: taskflow
+
+
+          image: mtarunkumar/taskflow:latest
+
+
+          imagePullPolicy: Always
+
+
+
+          ports:
+
+
+            - containerPort: 5000
+
+
+
+          envFrom:
+
+
+            - configMapRef:
+
+                name: taskflow-config
+
+
+
+            - secretRef:
+
+                name: taskflow-secret
+
+
+
+          volumeMounts:
+
+
+            - name: task-data
+
+              mountPath: /app/data
+
+
+
+          resources:
+
+
+            requests:
+
+
+              cpu: "100m"
+
+              memory: "128Mi"
+
+
+
+            limits:
+
+
+              cpu: "500m"
+
+              memory: "512Mi"
+
+
+
+      volumes:
+
+
+        - name: task-data
+
+
+          persistentVolumeClaim:
+
+
+            claimName: taskflow-pvc

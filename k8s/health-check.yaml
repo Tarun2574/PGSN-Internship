@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+
+  name: taskflow-health-check
+
+  namespace: taskflow
+
+
+spec:
+
+  replicas: 1
+
+
+  selector:
+
+    matchLabels:
+
+      app: taskflow-health
+
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: taskflow-health
+
+
+    spec:
+
+
+      containers:
+
+
+        - name: health-check
+
+
+          image: mtarunkumar/taskflow:latest
+
+
+          ports:
+
+
+            - containerPort: 5000
+
+
+          livenessProbe:
+
+
+            httpGet:
+
+
+              path: /
+
+
+              port: 5000
+
+
+            initialDelaySeconds: 30
+
+
+            periodSeconds: 10
+
+
+          readinessProbe:
+
+
+            httpGet:
+
+
+              path: /
+
+
+              port: 5000
+
+
+            initialDelaySeconds: 10
+
+
+            periodSeconds: 5

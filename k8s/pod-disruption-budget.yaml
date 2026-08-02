@@ -1,0 +1,23 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+
+metadata:
+
+  name: taskflow-pdb
+
+  namespace: taskflow
+
+
+spec:
+
+
+  minAvailable: 1
+
+
+  selector:
+
+
+    matchLabels:
+
+
+      app: taskflow

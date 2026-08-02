@@ -1,0 +1,68 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+
+metadata:
+
+  name: taskflow-role
+
+  namespace: taskflow
+
+
+rules:
+
+
+  - apiGroups:
+
+      - ""
+
+    resources:
+
+      - pods
+
+      - services
+
+      - configmaps
+
+      - secrets
+
+    verbs:
+
+      - get
+
+      - list
+
+      - watch
+
+
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+
+metadata:
+
+  name: taskflow-rolebinding
+
+  namespace: taskflow
+
+
+subjects:
+
+
+  - kind: ServiceAccount
+
+    name: taskflow-service-account
+
+    namespace: taskflow
+
+
+
+roleRef:
+
+
+  kind: Role
+
+  name: taskflow-role
+
+  apiGroup: rbac.authorization.k8s.io
